@@ -24,32 +24,32 @@ func main(){
 		
 		switch {
 		case outcome == "B X":
-			totalPointsCaseOne = totalPointsCaseOne + 1
-			totalPointsCaseTwo = totalPointsCaseTwo + 1
+			totalPointsCaseOne += 1
+			totalPointsCaseTwo += 1
 		case outcome == "C Y":
-			totalPointsCaseOne = totalPointsCaseOne + 2
-			totalPointsCaseTwo = totalPointsCaseTwo + 6
+			totalPointsCaseOne += 2
+			totalPointsCaseTwo += 6
 		case outcome == "A Z":
-			totalPointsCaseOne = totalPointsCaseOne + 3
-			totalPointsCaseTwo = totalPointsCaseTwo + 8
+			totalPointsCaseOne += 3
+			totalPointsCaseTwo += 8
 		case outcome == "A X":
-			totalPointsCaseOne = totalPointsCaseOne + 4
-			totalPointsCaseTwo = totalPointsCaseTwo + 3
+			totalPointsCaseOne += 4
+			totalPointsCaseTwo += 3
 		case outcome == "B Y":
-			totalPointsCaseOne = totalPointsCaseOne + 5
-			totalPointsCaseTwo = totalPointsCaseTwo + 5
+			totalPointsCaseOne += 5
+			totalPointsCaseTwo += 5
 		case outcome == "C Z":
-			totalPointsCaseOne = totalPointsCaseOne + 6
-			totalPointsCaseTwo = totalPointsCaseTwo + 7
+			totalPointsCaseOne += 6
+			totalPointsCaseTwo += 7
 		case outcome == "C X":
-			totalPointsCaseOne = totalPointsCaseOne + 7
-			totalPointsCaseTwo = totalPointsCaseTwo + 2
+			totalPointsCaseOne += 7
+			totalPointsCaseTwo += 2
 		case outcome == "A Y":
-			totalPointsCaseOne = totalPointsCaseOne + 8
-			totalPointsCaseTwo = totalPointsCaseTwo + 4
+			totalPointsCaseOne += 8
+			totalPointsCaseTwo += 4
 		case outcome == "B Z":
-			totalPointsCaseOne = totalPointsCaseOne + 9
-			totalPointsCaseTwo = totalPointsCaseTwo + 9
+			totalPointsCaseOne += 9
+			totalPointsCaseTwo += 9
 		}
 		
     }
