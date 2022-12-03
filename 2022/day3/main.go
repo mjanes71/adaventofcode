@@ -42,12 +42,12 @@ func main(){
 			for _, item := range sortString(line) {
 				_, itsIn1 := groupSack1[item]
 				_, itsIn2 := groupSack2[item]
+				//add overlap value to part2 total
 				if itsIn1 && itsIn2 {
 					ruckTotalPart2 += ruckItemValues[item]
 					break
 				}
 			}
-			//add overlap value to part2 total
 			//reset the group counter to 0
 			groupCounter = 0
 		}
@@ -64,13 +64,15 @@ func main(){
 		ruck := strings.Split(line, "")
 		ruckCenter := len(ruck)/2
 		
-		//sort the string
+		//sort the ruck 
 		sortedRuck := sortString(line)
 
-		//split the string
+		//split the ruck into compartments
 
 		compartmentOnePt1 := ruck[:ruckCenter]
 		compartmentTwoPt1 := ruck[ruckCenter:]
+
+		//find the duplicate between the two compartments
 
 		duplicateItemPart1 := findDuplicateforTwo(compartmentOnePt1, compartmentTwoPt1, sortedRuck)
 
