@@ -20,6 +20,7 @@ func main(){
     scanner := bufio.NewScanner(file)
 
 	overlapCount := 0
+	partialOverlapCount := 0
 
 	for scanner.Scan() {
 		//replace hyphen with commma so string is just csv
@@ -34,18 +35,23 @@ func main(){
 		bHigh,_ := strconv.Atoi(mySlice[3])
 
 		//find if the ranges indicate an overlap
-		isOverlap := compareRanges(aLow, aHigh, bLow, bHigh)
+		isOverlap := compareForCompleteOverlap(aLow, aHigh, bLow, bHigh)
+		isPartialOverlap := compareForPartialOverlap(aLow, aHigh, bLow, bHigh)
 
 		if isOverlap {
 			overlapCount ++
+		}else if isPartialOverlap {
+			partialOverlapCount ++
 		}
 
 	}
-	fmt.Printf("The overlap count is %v", overlapCount)
+	fmt.Printf("\nThe overlap count is %v", overlapCount)
+	fmt.Printf("\nThe partial overlap count is %v", partialOverlapCount)
+	fmt.Printf("\nThe total overlap count is %v", overlapCount + partialOverlapCount)
 
 }
 
-func compareRanges(aLow, aHigh, bLow, bHigh int) bool {
+func compareForCompleteOverlap(aLow, aHigh, bLow, bHigh int) bool {
 	theyOverlap := false
 
 	switch {
@@ -53,6 +59,23 @@ func compareRanges(aLow, aHigh, bLow, bHigh int) bool {
 		theyOverlap = true
 	case aLow <= bLow && aHigh >= bHigh:
 		theyOverlap = true
+	}
+
+	return theyOverlap
+}
+
+func compareForPartialOverlap(aLow, aHigh, bLow, bHigh int) bool {
+	theyOverlap := false
+
+	switch {
+	case aHigh == bLow:
+		theyOverlap = true
+	case aHigh > bLow:
+		if aLow <= bLow {
+			theyOverlap = true
+		}else if bHigh >= aLow {
+			theyOverlap = true
+		}
 	}
 
 	return theyOverlap
