@@ -21,11 +21,6 @@ var stack9 = []string{"L", "S", "G"}
 var stacks = map[int][]string{1:stack1, 2:stack2, 3:stack3, 4:stack4, 5:stack5, 6:stack6, 7:stack7, 8:stack8, 9:stack9}
 var stacksPt2 = map[int][]string{1:stack1, 2:stack2, 3:stack3, 4:stack4, 5:stack5, 6:stack6, 7:stack7, 8:stack8, 9:stack9}
 
-// var stack1 = []string{"Z", "N"}
-// var stack2 = []string{"M", "C", "D"}
-// var stack3 = []string{"P"}
-// var stacks = map[int][]string{1:stack1, 2:stack2, 3:stack3}
-
 
 func main() {
 	//read a line from the file
