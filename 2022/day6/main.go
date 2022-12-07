@@ -20,7 +20,7 @@ func main() {
 
 }
 
-//break of slices of 14 and look for duplicates. if none exist,
+//break off slices of 14 and look for duplicates. if none exist,
 //increment the low and high bounds of the slice and look again
 func findStartOfMessageMarker(data string) int {
 	transmission := strings.Split(data, "")
@@ -39,7 +39,7 @@ func findStartOfMessageMarker(data string) int {
 	return messageStart
 }
 
-//break of slices of 4 and look for duplicates. if none exist,
+//break off slices of 4 and look for duplicates. if none exist,
 //increment the low and high bounds of the slice and look again
 func findStartOfPacketMarker(data string) int {
 	transmission := strings.Split(data, "")
