@@ -20,6 +20,8 @@ func main() {
 
 }
 
+//break of slices of 14 and look for duplicates. if none exist,
+//increment the low and high bounds of the slice and look again
 func findStartOfMessageMarker(data string) int {
 	transmission := strings.Split(data, "")
 	counter := 14
@@ -37,6 +39,8 @@ func findStartOfMessageMarker(data string) int {
 	return messageStart
 }
 
+//break of slices of 4 and look for duplicates. if none exist,
+//increment the low and high bounds of the slice and look again
 func findStartOfPacketMarker(data string) int {
 	transmission := strings.Split(data, "")
 	counter := 4
@@ -54,6 +58,10 @@ func findStartOfPacketMarker(data string) int {
 	return packetStart
 }
 
+//check a slice for duplicates by comparing the length of the slice
+//to a map whose keys are the values of the slice
+//map will eliminate duplicate values, so if the lengths
+//of map and slice are different, there are duplicate values in the slice
 func containsDuplicates(sliceToCheck []string) bool {
 	containsDuplicates := false
 	mapOfSlice := make(map[string]int)
